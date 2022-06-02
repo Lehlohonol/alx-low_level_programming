@@ -1,14 +1,12 @@
 #include <stdio.h>
 
 /**
- *<stdio.h> - Input Output
+ * main - my main fuction that prints out
  *
- *void - we check code
- *
+ * Return: returning O
  */
-
 int main(void)
-{;
+{
 	puts("\"Programming is like building a multilingual puzzle");
-		return(0);
+		return (0);
 }
