@@ -2,7 +2,7 @@
 
 /**
  * main - base 10 numbers
- * program that prints all single digit numbers of base 10 starting from 0,followed by a new line
+ * program that prints all single digit numbers of base 10 starting from 0
  * Return: 0 for now
  */
 int main(void)
