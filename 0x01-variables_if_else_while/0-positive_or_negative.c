@@ -5,7 +5,7 @@
 /**
  * main - Print and checking if number is positive or negative
  *
- * Return: 0 
+ * Return: 0
  */
 int main(void)
 {
@@ -23,5 +23,5 @@ int main(void)
 	else
 	printf("%d is negative\n" n);
 
-	return(0);
+	return (0);
 }
