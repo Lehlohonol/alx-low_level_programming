@@ -8,24 +8,24 @@
  * Return: @dests
  */
 
-char *_strncat(char *dests, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
 	int c, j;
 
 	c = 0;
 
 	/*find size of dest array*/
-	while (dests[c])
+	while (dest[c])
 		c++;
 
 	/**
 	 * src does not need to be null terminated
-	 * if it contains n or more bytes
+	 * if it contains n or more memory
 	 */
 	for (j = 0; j < n && src[j] != '\0'; j++)
-		dests[c + j] = src[j];
+		dest[c + j] = src[j];
 	/*null terminate destinations*/
-	dests[c + j] = '\0';
+	dest[c + j] = '\0';
 
-	return (dests);
+	return (dest);
 }
