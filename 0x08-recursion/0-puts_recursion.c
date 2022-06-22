@@ -1,8 +1,7 @@
 #include "main.h"
 
-
 /**
- * main - function with printing instruction
+ * main - use the puts function
  *
  * Return: Always 0
  */
