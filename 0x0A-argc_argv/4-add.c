@@ -1,45 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
- * isInteger - checks if s is an integer
- * @s: string to check
- * Return: 0 or 1
+ * num_checker - checks if a given char is number or not
+ * @a: char to be checked
+ * Return: 1, if its a number, else 0
  */
 
-int isInteger(const char *s)
+int num_checker(char *a)
 {
-	int j = 0;
+	int i, num, len;
 
-	while (s[j] != '\0')
+	i = 0;
+	num = 0;
+	len = strlen(a);
+	while (i < len)
 	{
-		if (s[j] < '0' || s[j] > '9')
-			return (1);
-		j++;
+		if (a[i] < '0' || a[i] > '9')
+		{
+			return (-1);
+		}
+		else
+			num = num * 10 + (a[i] - '0');
+		i++;
 	}
-	return (0);
+	return (num);
 }
 
 /**
- * main - adds positive numbers
- * @argc: int
- * @argv: list
- * Return: 0
+ * main - add positive numbers
+ * @argc: arguement count
+ * @argv: array of pointers to arguement strings
+ * Return: result of addition or 1
  */
-
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
-	int sum = 0;
+	int i, num, sum;
 
-	while (--argc)
+	sum = 0;
+	for (i = 1; i < argc; i++)
 	{
-		if (isInteger(argv[argc]))
+		num = num_checker(argv[i]);
+		if (num == -1)
 		{
 			printf("Error\n");
 			return (1);
 		}
-		sum += atoi(argv[argc]);
+		sum += num;
 	}
-	printf("%i\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
