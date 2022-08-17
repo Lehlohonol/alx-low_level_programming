@@ -1,21 +1,18 @@
 #include "main.h"
-
 /**
- * print_alphabet - Entry point fuction with out of repetation
- *
- * Return: void
+ * print_alphabet_x10 - repeats the print_alphabets 10 times
+ * Return: 0 on success
  */
-
-void void print_alphabet_x10(void)
+void print_alphabet_x10(void)
 {
-	int x;
-	char l;
+	int i;
+	char c;
 
-	for (x = 0; x < 9; ++x)
+	for (i = 0; i < 10; ++i)
 	{
-		for (l = 'a'; l <= 'z'; l++)
+		for (c = 'a'; c <= 'z'; c++)
 		{
-			_putchar(l);
+			_putchar(c);
 		}
 		_putchar('\n');
 	}
