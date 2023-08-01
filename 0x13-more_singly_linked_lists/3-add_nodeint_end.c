@@ -2,7 +2,7 @@
 
 /**
  * Prototype: add_nodeint_end - function to add new node at the end of the list
- * 
+ *
  * @head: pointer to the pointer to list
  * @n: data to add
  *
