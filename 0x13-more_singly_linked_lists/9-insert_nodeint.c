@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * Proto: insert_nodeint_at_index - function to insert a node in a list at index
+ * Proto:insert_nodeint_at_index - function to insert a node in a list at index
  * @head: pointer to the pointer to list
  * @idx: given index to insert node at
  * @n: data to be inserted
