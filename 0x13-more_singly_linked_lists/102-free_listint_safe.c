@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * Prototype free_listint_safe - function to free list
+ * Proto: free_listint_safe - function to free list
  * @h: pointer to the pointer of the list
  * Return: count
  */
