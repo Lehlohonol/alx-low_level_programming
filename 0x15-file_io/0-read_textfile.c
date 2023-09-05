@@ -1,40 +1,49 @@
 #include "main.h"
 
-/**
- * Prototype:read_textfile - reads a text file and print
- *
- * @filename: a pointer to the file to be read.
- * @letters: number of letters it should read and print
- *
- * Return: 0 if fail / number of letters it read and printed otherwise
- */
 
+/**
+ * Prototype: read_textfile - function to read and print text file to stdout
+ * @filename: ptr to the file to read and print
+ * @letters: number of bytes to print
+ * Return: 0 if failed else number of bytes printed
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	char *b;
-	size_t r, w;
+	ssize_t reader, output, fd;
+	char *buff;
 
 	if (filename == NULL)
 		return (0);
 
-	b = malloc(sizeof(char) * letters);
-	if (b == NULL)
+	buff = malloc(letters);
+	if (buff == NULL)
 		return (0);
 
-	/** open files **/
 	fd = open(filename, O_RDONLY);
+
 	if (fd == -1)
+	{
+		free(buff);
 		return (0);
+	}
 
-	/** process opened file **/
-	r = read(fd, b, letters);
-	w = write(STDOUT_FILENO, b, r);
+	reader = read(fd, buff, letters);
 
-	/** close opened files **/
+	if (reader == -1)
+	{
+		free(buff);
+		return (0);
+	}
+
+	output = write(STDOUT_FILENO, buff, reader);
+
+	if (output == -1 || output != reader)
+	{
+		free(buff);
+		return (0);
+	}
+
 	close(fd);
-
-	free(b);
-
-	return (w);
+	free(buff);
+	return (output);
 }
