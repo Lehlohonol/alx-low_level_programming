@@ -31,7 +31,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	r = read(fd, b, letters);
 	w = write(STDOUT_FILENO, b, r);
 
-	/** close opened file **/
+	/** close opened files **/
 	close(fd);
 
 	free(b);
